@@ -21,7 +21,17 @@ from App import views
 urlpatterns = [
     # url(r'^admin/', admin.site.urls),
 
-    url(r'^register/$',views.register,name="register")
+    url(r'^register/$',views.register,name="register"),
+    url(r'^Deals_Detailed/$',views.Deals_Detailed,name="Deals_Detailed"),
+    url(r'^Help/$',views.Help,name="Help"),
+    url(r'^index/$',views.index,name="index"),
+    url(r'^Preferential/$',views.Preferential,name="Preferential"),
+    url(r'^Product_list/$',views.Product_list,name="Product_list"),
+    url(r'^Products/$',views.Products,name="Products"),
+
+    url(r'^Products_Detailed/$', views.Products_Detailed, name="Products_Detailed"),
+    url(r'^Shopping_Cart/$', views.Shopping_Cart, name="Shopping_Cart"),
+    url(r'^User_center/$', views.User_center, name="User_center"),
 
 
 

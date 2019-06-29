@@ -1,0 +1,140 @@
+.zp_top,.zp_header,.zp_Shopping_cart, #zp_footer,#zp_page{ width:1000px; margin:0 auto} 
+#header.zp_header .Search{ float:right}
+.flow_step_no1{ height:32px; line-height:32px;}
+.flow_step_no1 ul{ float:right}
+.flow_step_no1 .step_1{	
+	-moz-border-radius: 5px 0px 0px 5px;      /* Gecko browsers */
+	-webkit-border-radius: 5px 0px 0px 5px;   /* Webkit browsers */
+	border-radius:5px 0px 0px 5px;            /* W3C syntax */
+}
+.flow_step_no1 .step_3{
+	-moz-border-radius: 0px 5px 5px 0px;      /* Gecko browsers */
+	-webkit-border-radius: 0px 5px 5px 0px;   /* Webkit browsers */
+	border-radius:0px 5px 5px 0px;            /* W3C syntax */
+}
+.Process ul li {
+	width: 176px;
+	line-height: 32px;
+	float: left;
+	font-size:14px;
+	text-align: center;
+	background: #E6E6E6 url(../images/shipping_step.png) no-repeat right top;
+	color: #666;
+}
+.flow_step_no1 .step_3, .flow_step_no2 .step_3, .flow_step_no3 .step_3 {background-position: -999px -999px;}
+.Process .step_1 ,.Process .step_2 {background-position: right -66px;}
+.flow_step_no1 .step_1, .flow_step_no2 .step_2, .flow_step_no3 .step_3 {background-color: #48B123;color: #FFF;}
+.Shopping_list{ margin:20px 0px;}
+.Shopping_list .title_name{ background:#e7e7e7; height:40px; line-height:40px; color:#333333; font-size:14px}
+.Shopping_list .title_name li{ float:left; text-align: center}
+.Shopping_list .title_name li.name{ width:400px;}
+.Shopping_list .title_name li.checkbox{ width:40px;}
+.Shopping_list .title_name li.scj{width:100px;}
+.Shopping_list .title_name li.bdj{width:100px;}
+.Shopping_list .title_name li.sl{width:120px;}
+.Shopping_list .title_name li.xj{width:120px;}
+.Shopping_list .title_name li.cz{width:120px;}
+/************************购物车****************************/
+.shopping{ border:1px solid #ddd;}
+.table_list{ width:998px; }
+.table_list tr{ height:90px; border-bottom:1px solid #EFEFEF; text-align:center}
+.table_list tr.on{ background: #F1FCF3}
+.table_list .tr .img{ margin:10px; float:left; margin-right:20px;}
+.table_list .tr td.sp{ font-size:14px}
+.table_list .tr img{ width:80px; height:80px; border:1px solid #ddd; padding:1px;}
+.table_list .tr .p_name{ float:left}
+.table_list .tr .p_name a{ color:#333333; font-family:"新宋体"}
+.table_list .tr .p_name a:hover,
+.Shopping_list .table_list td.cz a:hover{ color:#FF9900}
+.Shopping_list .table_list td.name{ width:400px;line-height:90px;}
+.Shopping_list .table_list td.checkbox{ width:40px;}
+.Shopping_list .table_list td.scj{width:100px;}
+.Shopping_list .table_list td.bdj{width:100px;}
+.Shopping_list .table_list td.sl{width:120px;}
+.Shopping_list .table_list td.xj{width:120px;}
+.Shopping_list .table_list td.cz{width:120px;}
+.Shopping_list .table_list td.cz a{ color: #009900; line-height:24px;}
+.Shopping_list .table_list .Numbers a{ font-size:16px; color:#333333; font-weight:bold}
+.Shopping_list .table_list .Numbers .number_text{ width:50px; border:1px solid #ddd; text-align:center}
+.Shopping_list .sp_Operation{ margin:50px 20px 20px 20px; border-top:1px solid #ddd; position:relative; height:100px;}
+.Shopping_list .operation a{ color:#333333; padding:0px 10px;}
+.Shopping_list .operation a:hover{ color:#009900}
+.Shopping_list .select-all {
+	float: left;
+	height: 18px;
+	line-height: 18px;
+	padding: 16px 0 16px 9px;
+	white-space: nowrap;
+font-family:"新宋体"
+}
+.cart-checkbox {
+	position: relative;
+	z-index: 3;
+	float: left;
+	margin-right: 5px;
+}
+.jdcheckbox {
+	position: relative;
+	float: none;
+	vertical-align: middle;
+	_vertical-align: -1px;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+.Shopping_list .select-all .operation {
+	float: left;
+	height: 50px;
+	width: 100px;
+	line-height:18px;
+}
+/******************************************/
+.toolbar_right{ width:200px; float:right;}
+.toolbar_right .p_Total,.toolbar_right .Discount{ line-height:30px;font-size:14px;  height:30px}
+.toolbar_right  .text{ float:left; width:90px; text-align: right}
+.toolbar_right  .price{ float: left;}
+.toolbar_right .p_Total .sumPrice{ color:#FF0000; font-size:18px}
+.toolbar_right .btn .gouwu_btn,
+.toolbar_right .btn .submit_btn{ background: url(../images/globalBackground.png) no-repeat}
+.toolbar_right .btn .gouwu_btn{ background-position: -30px -185px; padding:0px 50px; cursor:pointer; border:0; height:38px;}
+.toolbar_right .btn .submit_btn{ background-position:-30px -226px; width:90px; height:37px; border:0; cursor:pointer}
+/***********************************推荐产品样式属性************************************************/
+.slideRecommend{ margin-top:50px; margin-bottom:30px;}
+.slideRecommend .title_name{ height:30px; border-bottom:3px solid #1e9000; line-height:30px; padding-left:20px; font-size:16px;}
+.picList li{ width:165px;  } 
+.picList .pic{ text-align:center; line-height:0px;  } 
+.picList .pic img{ width:150px; height:150px;  } 
+.picList .title{ line-height:20px;   } 
+ 
+/* 多个左滚动 - 公用类 */ 
+.leftLoop{ overflow:hidden; position:relative; border:1px solid #ddd   } 
+.leftLoop .hd{ overflow:hidden;  } 
+.leftLoop .hd .prev,
+.leftLoop .hd .next{ 
+ position:absolute; 
+ top:40%;
+ text-align:center;
+ overflow:visible;
+ display:block; 
+ width:30px; 
+ height:70px;
+ background: url(../images/globalBackground.png) no-repeat;
+ cursor:pointer	 	
+} 
+.leftLoop .hd .next{ left:10px; background-position: 0px -392px; height:70px; width:30px; } 
+.leftLoop .hd .prev{left:960px;background-position:-30px -400px; height:70px; width:30px;}
+.leftLoop .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px;  } 
+.leftLoop .hd ul li.on{ background:#f00;  } 
+.leftLoop .bd{ padding:25px 0px; margin-left:40px;} 
+.leftLoop .bd ul{ overflow:hidden; zoom:1; } 
+.leftLoop .bd ul li{ margin:0 10px; text-align:left; float:left;display:_inline; } 
+.leftLoop .bd ul li a{font-family:"新宋体"; color:#333333;}
+.leftLoop .bd ul li a:hover,
+#zp_footer .Copyright a:hover{color:#009900}
+.leftLoop .bd ul li .p_Price{ color:#FF0000; font-weight:bold; font-size:14px}
+/*************************底部样式*******************************/
+#zp_footer dl.fore{ width:200px; float:left; line-height:24px; padding-bottom:10px; border-bottom:3px solid #1e9000}
+#zp_footer dl.fore dt{ font-size:16px; padding-left:50px; }
+#zp_footer dl.fore dd{ padding-left:50px;}
+#zp_footer dl.fore a{ color:#999999; font-family:"新宋体"}
+#zp_footer .Copyright{ line-height:30px; text-align:right; margin:20px 0px;font-family:"新宋体"; color:#999999}
+#zp_footer .Copyright a{ color:#999999; padding:0px 10px;}

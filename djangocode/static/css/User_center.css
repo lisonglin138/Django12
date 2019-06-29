@@ -1,0 +1,140 @@
+#user em{background:url(../images/globalBackground.png) no-repeat;}
+#user .us_Position{ height:40px; line-height:40px; margin-bottom:20px;}
+#user .us_Position a{ color:#333333}
+#user .us_Position em{background-position: -125px -231px; padding:5px 14px; margin-right:10px;}
+#user .left_style .user_title { 
+	height:30px; 
+	line-height:30px; 
+	font-size:18px; 
+	border:1px solid #F2F2F2; 
+	box-shadow:0px 3px 3px #cccccc;
+	-moz-box-shadow:0px 3px 3px #cccccc;
+	-webkit-box-shadow:0px 3px 3px #cccccc;
+}
+#user .left_style .user_title em{ background-position: -4px -510px; padding:1px 14px; margin:0px 20px;}
+/********************栏目属性*******************/
+#user .user_Column{ border:1px solid #ddd; width:220px; margin:20px 0px;}
+#user .user_Column .Column_list{}
+#user .user_Column .Column_list li{ line-height:24px; font-family:"新宋体"; padding:0px 10px;}
+#user .user_Column .Column_list li a{ color:#333333}
+#user .user_Column .Column_list .title_name{ height:30px; line-height:30px; color:#FFFFFF; font-size:16px; background:#19990b}
+#user .user_Column .Column_list .title_name em{ background-position: -75px -413px; padding:1px 9px; margin:0px 10px}
+#user .user_Column ul.Order .title_name em{background-position: -105px -413px; padding:4px 9px; margin:0px 10px}
+#user .user_Column ul.Call .title_name em{background-position: -137px -413px; padding:5px 9px; margin:0px 10px}
+#user .Notice{ height:30px; line-height:30px; background:#19990b; color:#FFFFFF; font-family:"新宋体"}
+#user .Notice span{ font-weight:bold}
+#user .Notice em{background-position: -172px -424px; padding:1px 10px ; margin:0px 5px}
+#user .user_content{ margin:20px 0px; padding-bottom:10px; border-bottom:1px solid #ddd}
+#user .user_content .face_img{ float:left; width:138px; height:128px; border:1px solid  #ddd; padding:1px; position:relative; margin-right:20px;}
+#user .user_content .face_img img{width:138px; height:128px;}
+#user .user_content .face_img .xg_face{ position:absolute; background:url(../images/user_bg_03.png) repeat; height:30px; line-height:30px; width:140px; bottom:0px; left:0; text-align: center}
+#user .user_content .face_img .xg_face  a{ color:#FFFFFF;}
+#user .user_content .face_img .xg_face em{background-position: -30px -515px; padding:1px 11px ; margin-right:5px;}
+/*****************用户属性******************/
+#user .user_name_info{ line-height:34px; float: left; width:790px; }
+#user .user_name_info .us_one{}
+#user .user_name_info .name{}
+#user .user_name_info .name b{ font-size:16px; color:#009900; padding:0px 5px;}
+#user .user_name_info .us_one .Verify em{background-position: -6px -485px; padding:0px 10px ; margin:0px 3px; width:16px; height:16px;}
+#user .user_name_info .us_two dl,
+#user .user_name_info .us_Order dl{ float:left; width:150px; font-size:14px}
+#user .user_name_info .us_two dl dd b{ color:#FF0000}
+#user .user_name_info .us_Order{ background:#EFEFEF; padding:0px 10px;}
+#user .user_name_info .us_Order dl dd a{ font-size:14px; color:#FF0000}
+#user .user_name_info .us_Order dl dd a:hover{ color:#009900; text-decoration:underline}
+#user .user_name_info .us_four{}
+#user .user_name_info .us_four .time span{ padding:0px 10px; font-family:"新宋体"}
+#user .user_name_info .us_four .ratings{}
+#user .user_name_info .us_four .ratings .gao{ color:#FF0000}
+#user .user_name_info .us_four .ratings .ratings_tiao{ height:15px; width:100px; background:#006600; float: left; margin-top:8px; margin-right:5px;}
+#user .us_Orders{ width:700px; margin-right:20px;}
+#user .us_Orders .Orders_name{ height:40px;}
+#user .us_Orders .Orders_name .title_name{ border-bottom:1px solid #ddd;}
+#user .us_Orders table{ width:700px;}
+#user .us_Orders table tbody tr{ height:100px; border-bottom:1px dashed #ddd;}
+#user .us_Orders table thead{ line-height:30px; background:#F5F5F5;}
+#user .us_Orders table thead th{ padding:0px 10px;}
+#user .us_Orders table tbody tr td{padding:0px 10px;}
+#user .us_Orders table tbody tr td.img img{ width:80px; height:80px; margin-right:20px;}
+#user .us_Orders .Orders_name .title_name .Records{ position:relative; text-align:center; top:10px; background:#FFFFFF; width:80px; font-size:16px}
+#user .us_Orders .Orders_name .title_name .select{ position:relative; top:-10px; padding:0px 10px; background:#FFFFFF}
+#user .us_Orders .Orders_name .title_name .select select{ border:1px solid #ddd; color:#999999; font-family:"新宋体"}
+#user .us_Orders .us_jls{ text-align:right; font-size:14px; padding:10px;}
+#user .us_Other{ float:right; width:230px;}
+#user .us_Other .us_AD{ height:230px; margin-bottom:20px;}
+#user .us_Other .us_AD a{ border:1px solid #ddd; display:block; height:228px; width:228px;}
+#user .us_Other .us_AD img{ width:228px; height:228px;}
+/***********************************/
+.picList li{ width:160px;  } 
+.picList .pic{ text-align:center; line-height:0px;  } 
+.picList .pic img{ width:150px; height:150px;  } 
+.picList .title{ line-height:20px;   } 
+ 
+/* 多个左滚动 - 公用类 */ 
+.Record_p{ overflow:hidden; position:relative; border:1px solid #ddd   } 
+ .Record_p .title_name{ line-height:40px; height:40px; padding:0px 10px;}
+ .Record_p .title_name .name{ font-size:16px}
+.Record_p .hd{ overflow:hidden;  } 
+.Record_p .hd .prev,
+.Record_p .hd .next{ 
+ position:absolute; 
+ top:40%;
+ text-align:center;
+ overflow:visible;
+ display:block; 
+ width:30px; 
+ height:30px;
+ cursor:pointer	;
+ font-size:32px;
+ font-family:"新宋体" 	
+} 
+.Record_p .hd .next{ left:10px;  } 
+.Record_p .hd .prev{left:190px;}
+.Record_p .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px;  } 
+.Record_p .hd ul li.on{ background:#f00;  } 
+.Record_p .bd{ padding:25px 0px; margin-left:40px;} 
+.Record_p .bd ul{ overflow:hidden; zoom:1; } 
+.Record_p .bd ul li{text-align:left; float:left;display:_inline; } 
+.Record_p .bd ul li a{font-family:"新宋体"; color:#333333;}
+.Record_p .bd ul li a:hover{color:#009900}
+.Record_p .bd ul li .p_Price{ color:#FF0000; font-weight:bold; font-size:14px}
+/******************收藏样式属性*********************/
+.Collections_p .title_name{ line-height:30px; font-size:18px; border-bottom:1px solid   #ddd}
+#Collection_p .picList .pic img{ width:130px; height:130px}
+.Collections_p{ margin:20px 0px;}
+#Collection_p .picList .title{ padding:0px 10px;}
+.Collection_p{ overflow:hidden; position:relative; background:#F5F5F5; width:960px; } 
+.Collection_p .hd{ overflow:hidden;  } 
+.Collection_p .hd .prev,
+.Collection_p .hd .next{ 
+ position:absolute; 
+ top:40%;
+ text-align:center;
+ overflow:visible;
+ display:block; 
+ width:30px; 
+ height:70px;
+ background: url(../images/globalBackground.png) no-repeat;
+ cursor:pointer	 	
+} 
+.Collection_p .hd .next{ left:10px; background-position: 0px -392px; height:70px; width:30px; } 
+.Collection_p .hd .prev{left:920px;background-position:-30px -400px; height:70px; width:30px;}
+.Collection_p .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px;  } 
+.Collection_p .hd ul li.on{ background:#f00;  } 
+.Collection_p .bd{ padding:25px 0px; margin-left:40px;} 
+.Collection_p .bd ul{ overflow:hidden; zoom:1; } 
+.Collection_p .bd ul li{ margin:0 8px; padding:10px 0px;display:_inline; background:#FFFFFF} 
+.Collection_p .bd ul li a{font-family:"新宋体"; color:#333333;}
+.Collection_p .bd ul li a:hover{color:#009900}
+.Collection_p .bd ul li .p_Price{ color:#FF0000; font-weight:bold; font-size:14px; padding:0px 10px;}
+/*****************菜单栏样式********************/
+#user .sideMenu{  border:1px solid #ddd;  }
+#user .sideMenu h3{ border-bottom:1px solid #fff;height:32px; line-height:32px; padding-left:10px;  border-top:1px solid #e3e3e3; background:#f4f4f4; cursor:pointer; font:normal 14px/32px ;}
+#user .sideMenu h3 em{ margin-top:10px; margin-right:10px; float:right; display:block; width:11px; height:3px; padding:3px;   background: url(../images/sh_img_02.png) -116px -131px no-repeat; cursor:pointer; }
+#user .sideMenu h3.on em{ background-position:-116px -141px }
+#user .sideMenu ul{ padding:8px 15px; color:#999; display:none; /* 默认都隐藏 */ }
+#user .sideMenu .title_name{ height:40px; line-height:40px; color:#FFFFFF; font-size:18px; text-align:center; background:#009900}
+#user .sideMenu ul { line-height:24px;}
+#user .sideMenu ul li a{ color:#333333}
+#user .sideMenu ul li a:hover{ color:#FF6600}
+.help .title_Section{ height:40px; background:#058702; line-height:40px; color:#FFFFFF; font-size:18px; padding-left:20px;}
