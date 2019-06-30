@@ -1,0 +1,306 @@
+{% extends 'Product_list.html' %}
+{% load static %}
+
+<head>
+<title>优惠详细</title>
+
+</head>
+{% block ext_css %}
+        {{ block.super }}
+        <link href="/static/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+        <link href="/static/css/page.css" rel="stylesheet" type="text/css" />
+        <link href="/static/css/Narrow.css" rel="stylesheet" type="text/css" />
+    {% endblock %}
+
+
+
+
+    {% block content4 %}
+
+<!--团购详细样式-->
+<div id="zp_page" class="detail_main  clearfix">
+ <div class="zp_header clearfix">
+   <ul>
+     每日鲜限时优惠团购
+   </ul>
+ </div>
+ <div class="clearfix">
+ <!--图片展示样式-->
+  <div class=" left">
+  <div class="picFocus">
+			<div class="bd">
+				<ul>
+					<li><a target="_blank" href="www.SuperSlide2.com"><img src="/static/images/cp-1.jpg" /></a></li>
+					<li><a target="_blank" href="www.SuperSlide2.com"><img src="/static/images/cp-2.jpg" /></a></li>
+					<li><a target="_blank" href="www.SuperSlide2.com"><img src="/static/images/cp-3.jpg" /></a></li>
+					<li><a target="_blank" href="www.SuperSlide2.com"><img src="/static/images/cp-4.jpg" /></a></li>
+				</ul>
+			</div>
+
+			<div class="hd">
+				<ul>
+					<li><img src="/static/images/cp-1.jpg" /></li>
+					<li><img src="/static/images/cp-2.jpg" /></li>
+					<li><img src="/static/images/cp-3.jpg" /></li>
+					<li><img src="/static/images/cp-4.jpg" /></li>
+				</ul>
+			</div>
+
+		</div>
+		<script type="text/javascript">jQuery(".picFocus").slide({ mainCell:".bd ul",effect:"left",autoPlay:false });</script>
+  </div>
+  <div class="left main_box">
+  <h2 class="title">
+    [免费领券][新品限量买一送一]好莱奴2015夏新款欧美铆钉pu双肩包女夏韩版女士休闲背包书包（每个ID限购5件）
+</h2>
+   <div class="time">
+   <div class="icon-time"></div>
+    还剩: 2天21小时34分27.6秒
+   </div>
+   <div class="Numbers">
+  购买数量
+		  <a href="javascript:void(0);" onclick="updatenum('del');">-</a>
+		  <input id="number" name="number" type="text" value="1" class="number_text">
+		  <a href="javascript:void(0);" onclick="updatenum('del');">+</a>
+		  <span>最多购买五件商品</span>
+		 </div>
+  <div class="status_banner">
+   <div class="currentPrice">
+            <small>¥</small>138.00
+        </div>
+		<div class="left">
+		 <del class="originPrice">¥596.00</del>
+		</div>
+		<div>
+		<button type="submit" class="buyaction J_BuySubmit"><span>马上抢</span></button>
+		</div>
+  </div>
+  <div class="numOfPeople"><span class="num">779</span>件已售</div>
+  </div>
+ </div>
+ <div class="content_pic clearfix">
+   <div id="detail-left">
+     <div class="title_Others">其他商品</div>
+     <ul class="list">
+	  <li>
+	  <div class="img"><a href="#"><img src="/static/images/cp-1.jpg" /></a></div>
+	  <div class="title">
+	   <h4><a href="#">楼兰蜜语一等五星和田大枣1000g（500gx2包）</a></h4>
+	  </div>
+	  </li>
+	   <li>
+	  <div class="img"><a href="#"><img src="/static/images/cp-1.jpg" /></a></div>
+	  <div class="title">
+	   <h4><a href="#">楼兰蜜语一等五星和田大枣1000g（500gx2包）</a></h4>
+	  </div>
+	  </li>
+	   <li>
+	  <div class="img"><a href="#"><img src="/static/images/cp-1.jpg" /></a></div>
+	  <div class="title">
+	   <h4><a href="#">楼兰蜜语一等五星和田大枣1000g（500gx2包）</a></h4>
+	  </div>
+	  </li>
+	   <li>
+	  <div class="img"><a href="#"><img src="/static/images/cp-1.jpg" /></a></div>
+	  <div class="title">
+	   <h4><a href="#">楼兰蜜语一等五星和田大枣1000g（500gx2包）</a></h4>
+	  </div>
+	  </li>
+	 </ul>
+   </div>
+   <div id="detail-right">
+     <div class="dd_header">
+	   <ul>
+	    <li>产品介绍</li>
+		<li>用户评论(<b>21</b>)</li>
+	   </ul>
+	 </div>
+
+   </div>
+
+ </div>
+</div>
+<!--底部样式-->
+<div class="slogen">
+   <p><img src="/static/images/fuwu_56.png" /></p>
+   <p><img src="/static/images/fuwu_57.png" /></p>
+   <p><img src="/static/images/fuwu_58.png" /></p>
+   <p><img src="/static/images/fuwu_59.png" /></p>
+ </div>
+ <div class="footer">
+   <div class="left_footer">
+    <div class="b_mc_y"><p class="tubiao"></p><p class="gy_name">品质保证 安全放心<br /><span>打造蔬菜水果专业购物平台</span></p></div>
+	<div class="b_mc_y"><p class="phone_img"></p><p class="phone"><b>028-44332-2232</b><br /><span>周一至周六 10:00-22:00</span></p></div>
+	<div class="b_mc_y"><p class="phone_sj_img"></p><p class="phone"><b>189083323211</b><br /><span>24小时客户服务热线</span></p></div>
+   </div>
+   <div class="right_footer">
+   <dl class="fore1">
+			<dt><strong>购物指南</strong></dt>
+			<dd>
+				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+			</dd>
+		</dl>
+		 <dl class="fore1">
+			<dt><strong>购物指南</strong></dt>
+			<dd>
+				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+			</dd>
+		</dl>
+		 <dl class="fore1">
+			<dt><strong>购物指南</strong></dt>
+			<dd>
+				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+			</dd>
+		</dl>
+		 <dl class="fore1">
+			<dt><strong>购物指南</strong></dt>
+			<dd>
+				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+			</dd>
+		</dl>
+		 <dl class="fore1">
+			<dt><strong>购物指南</strong></dt>
+			<dd>
+				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+			</dd>
+		</dl>
+   </div>
+ </div>
+    {% endblock %}
+
+
+{#    {% block content5 %}#}
+{##}
+{#    {% endblock %}#}
+{#    {% block content6 %}#}
+{##}
+{#    {% endblock %}#}
+{#    {% block content7 %}#}
+{##}
+{#    {% endblock %}#}
+{#    {% block content8 %}#}
+{##}
+{#    {% endblock %}#}
+{#    {% block footer %}#}
+{##}
+{#    {% endblock %}#}
+
+{% block ext_js %}
+        {{ block.super }}
+    <script type="text/javascript">
+var i=0; //图片标识
+var img_num=$(".img_ul").children("li").length; //图片个数
+$(".img_ul li").hide(); //初始化图片
+play();
+$(function(){
+	$(".img_hd ul").css("width",($(".img_hd ul li").outerWidth(true))*img_num); //设置ul的长度
+
+	$(".bottom_a").css("opacity",0.7);	//初始化底部a透明度
+	//$("#play").css("height",$("#play .img_ul").height());
+	if (!window.XMLHttpRequest) {//对ie6设置a的位置
+		$(".change_a").css("height",$(".change_a").parent().height());
+	}
+
+	$(".change_a").focus(function(){
+		this.blur();
+	});
+	$(".bottom_a").hover(function(){//底部a经过事件
+		$(this).css("opacity",1);
+	},function(){
+		$(this).css("opacity",0.7);
+	});
+
+	$(".change_a").hover(function(){//箭头显示事件
+		$(this).children("span").show();
+	},function(){
+		$(this).children("span").hide();
+	});
+
+	$(".img_hd ul li").click(function(){
+		i=$(this).index();
+		play();
+	});
+
+	$(".prev_a").click(function(){
+		//i+=img_num;
+		i--;
+		//i=i%img_num;
+		i=(i<0?0:i);
+		play();
+	});
+	$(".next_a").click(function(){
+		i++;
+		//i=i%img_num;
+		i=(i>(img_num-1)?(img_num-1):i);
+		play();
+	});
+});
+
+function play(){//动画移动
+	var img=new Image(); //图片预加载
+	img.onload=function(){
+		img_load(img,$(".img_ul").children("li").eq(i).find("img"))
+	};
+	img.src=$(".img_ul").children("li").eq(i).find("img").attr("src");
+	//$(".img_ul").children("li").eq(i).find("img").(img_load($(".img_ul").children("li").eq(i).find("img")));
+	$(".img_hd ul").children("li").eq(i).addClass("on").siblings().removeClass("on");
+	if(img_num>7){//大于7个的时候进行移动
+		if(i<img_num-3){ //前3个
+			$(".img_hd ul").animate({"marginLeft":(-($(".img_hd ul li").outerWidth()+4)*(i-3<0?0:(i-3)))});
+		}else if(i>=img_num-3){//后3个
+			$(".img_hd ul").animate({"marginLeft":(-($(".img_hd ul li").outerWidth()+4)*(img_num-7))});
+		}
+	}
+	if(!window.XMLHttpRequest){//对ie6设置a的位置
+		$(".change_a").css("height",$(".change_a").parent().height());
+	}
+}
+
+function img_load(img_id,now_imgid){//大图片加载设置 （img_id 新建的img,now_imgid当前图片）
+	if(img_id.width/img_id.height>1){
+		if(img_id.width >=$("#play").width())
+		$(now_imgid).width($("#play").width());
+	}else{
+		if(img_id.height>=500) $(now_imgid).height(500);
+	}
+	$(".img_ul").children("li").eq(i).show().siblings("li").hide(); //大小确定后进行显示
+}
+
+function imgs_load(img_id){//小图片加载设置
+	if(img_id.width >=$(".img_hd ul li").width()){img_id.width = 80};
+	//if(img_id.height>=$(".img_hd ul li").height()) {img_id.height=$(".img_hd ul li").height();}
+}
+</script>
+        <script src="/static/js/jquery1.42.min.js" type="text/javascript"></script>
+        <script src="/static/js/common_js.js" type="text/javascript"></script>
+        <script src="/static/js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+
+    {% endblock %}
+
+

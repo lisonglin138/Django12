@@ -44,3 +44,7 @@ def Shopping_Cart(request):
 def User_center(request):
 
     return render(request,'User_center.html')
+
+# 测试用
+def aa(request):
+    return render(request,'linshicaozuo.html')

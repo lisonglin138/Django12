@@ -1,10 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{{ title }}</title>
+    {% block ext_css %}
+        <link href="/static/css/common.css" rel="stylesheet" type="text/css" />
+        <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+    {% endblock %}
 </head>
 <body>
+    {% block header %}
 
+    {% endblock %}
+    {% block content1 %}
+
+    {% endblock %}
+
+    {% block content2 %}
+
+    {% endblock %}
+    {% block content3 %}
+
+    {% endblock %}
+    {% block content4 %}
+
+    {% endblock %}
+
+    {% block content5 %}
+
+    {% endblock %}
+    {% block content6 %}
+
+    {% endblock %}
+    {% block content7 %}
+
+    {% endblock %}
+    {% block content8 %}
+
+    {% endblock %}
+    {% block footer %}
+
+    {% endblock %}
+
+
+    {% block ext_js %}
+        <script src="/static/js/jquery1.42.min.js" type="text/javascript"></script>
+        <script src="/static/js/common_js.js" type="text/javascript"></script>
+        <script src="/static/js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
+        <script src="/static/js/footer.js" type="text/javascript"></script>
+    {% endblock %}
 </body>
 </html>

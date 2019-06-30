@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^Products_Detailed/$', views.Products_Detailed, name="Products_Detailed"),
     url(r'^Shopping_Cart/$', views.Shopping_Cart, name="Shopping_Cart"),
     url(r'^User_center/$', views.User_center, name="User_center"),
+    url(r'^aa/$', views.aa, name="aa"),
 
 
 
