@@ -4,6 +4,7 @@ from django.db import models
 class GoodsType(models.Model):
     #商品分类表
     title=models.CharField(max_length=128)
+    gparentid=models.IntegerField(default=0)
     isdelete=models.BooleanField(default=False)
     desc = models.CharField(max_length=128,null=True)
     class Meta:
@@ -17,6 +18,7 @@ class GoodsInfo(models.Model):
     gprice =models.DecimalField(max_digits=6,decimal_places=2)
     # 商品价格 小数点为2位   整数位为三位
     gpic=models.CharField(max_length=128,null=True)
+    # 商品照片
     isdelete=models.BooleanField(default=False)
     gweight=models.CharField(max_length=200,default='500g')
     #  单位重量

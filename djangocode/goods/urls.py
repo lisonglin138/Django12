@@ -24,6 +24,9 @@ urlpatterns = [
     # url(r'^register/$',views.register,name="register"),
     # url(r'^Deals_Detailed/$',views.Deals_Detailed,name="Deals_Detailed"),
 
+    #  文件上传
+    url(r'^upload1/$',views.upload1,name='upload1'),
+
 
 
 

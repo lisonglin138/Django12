@@ -9,12 +9,13 @@
 
   {% block header %}
 <!--顶部样式-->
-<div id="top">
+      {% if username %}
+          <div id="top">
   <div class="top">
     <div class="Collection"><em></em><a href="#">收藏我们</a></div>
 	<div class="hd_top_manu clearfix">
 	  <ul class="clearfix">
-	   <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<a href="#" class="red">[请登录]</a> 新用户<a href="#" class="red">[免费注册]</a></li>
+	   <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<a href="#" class="red">{{ username }}</a> 很高兴<a href="#" class="red">见到您</a></li>
 	   <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">我的订单</a></li>
 	   <li class="hd_menu_tit hd_Shopping_Cart" data-addclass="hd_menu_hover">
 	     <a href="#" class="hd_menu">购物车(<b>0</b>)</a>
@@ -47,6 +48,46 @@
 	</div>
   </div>
 </div>
+      {% else %}
+          <div id="top">
+  <div class="top">
+    <div class="Collection"><em></em><a href="#">收藏我们</a></div>
+	<div class="hd_top_manu clearfix">
+	  <ul class="clearfix">
+	   <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<a href="{% url 'app:login' %}" class="red">[请登录]</a> 新用户<a href="{% url 'app:register' %}" class="red">[免费注册]</a></li>
+	   <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">我的订单</a></li>
+	   <li class="hd_menu_tit hd_Shopping_Cart" data-addclass="hd_menu_hover">
+	     <a href="#" class="hd_menu">购物车(<b>0</b>)</a>
+		 <div class="hd_Shopping_list">
+		    <i></i>
+		   <ul>
+		   <li>
+		    <div class="img"><img src="/static/images/tianma.png" /></div>
+		    <div class="content"><p><a href="#">产品名称</a></p><p>颜色分类:紫花8255尺码:XL</p></div>
+			<div class="Operations">
+			<p class="Price">￥55.00</p>
+			<p><a href="#">删除</a></p></div>
+		   </li>
+		   </ul>
+		    <div class="Shopping_style"><a href="#" class="Shopping">查看我的购物车</a></div>
+		   </div>
+	   </li>
+	   <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">联系我们</a></li>
+	   <li class="hd_menu_tit list_name" data-addclass="hd_menu_hover"><a href="#" class="hd_menu">客户服务</a>
+	    <div class="hd_menu_list">
+		   <ul>
+		    <li><a href="#">常见问题</a></li>
+			<li><a href="#">在线退换货</a></li>
+		    <li><a href="#">在线投诉</a></li>
+			<li><a href="#">配送范围</a></li>
+		   </ul>
+		</div>
+	   </li>
+	  </ul>
+	</div>
+  </div>
+</div>
+      {% endif %}
   {% endblock %}
   {% block content1 %}
 <div id="header"  class="header">
@@ -68,111 +109,62 @@
     <div class="Category"><a href="#"><em></em>所有产品分类</a></div>
     <div class="hd_allsort_out_box_new">
 	 <!--左侧栏目开始-->
-	 <ul class="Menu_list">	
-	    <li class="name"><a href="#" >鲜果类</a>
+        <ul class="Menu_list">
+         {% for goodtype in goodstypes %}
+         	    <li class="name"><a href="#" >{{ goodtype.title }}</a>
 		<div class="menv_Detail">
 		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <div class="title_name">热带水果</div>
-			  <li><a href="#">菠萝</a><a href="#">香蕉</a><a href="#">猕猴桃</a><a href="#">名称</a></li>
-			</ul>
-			 <ul>
-			  <div class="title_name">温带水果</div>
-			  <li><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		 
-		</li>
-		<li class="name"><a href="#" >精品蔬菜</a>
-		
-		<div class="menv_Detail">
-		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <li><a href="#">33</a><a href="#">23</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		
-		</li>
-		<li class="name"><a href="#" >特色干果</a>
-		<div class="menv_Detail">
-		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <li><a href="#">33</a><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		
-		</li>
-		<li class="name"><a href="#" >粮油食品</a>
-		<div class="menv_Detail">
-		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <li><a href="#">33</a><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		</li>
-		<li class="name"><a href="#" >调味类</a>
-		<div class="menv_Detail">
-		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <li><a href="#">33</a><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		</li>
-		<li class="name"><a href="#" >鲜肉类</a>
-		<div class="menv_Detail">
-		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <li><a href="#">33</a><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		</li>
-		<li class="name"><a href="#" >水产类</a>
-		<div class="menv_Detail">
-		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <li><a href="#">33</a><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		</li>
-		<li class="name"><a href="#" >日用百货</a>
-		<div class="menv_Detail">
-		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <li><a href="#">33</a><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		</li>
-		<li class="name"><a href="#" >宣传服务处</a>
-		<div class="menv_Detail">
-		 <div class="cat_pannel clearfix">
-		    <ul>
-			  <li><a href="#">33</a><a href="#">名称</a><a href="#">名称</a><a href="#">名称</a></li>
-			</ul>
-		  </div>
-		</div>
-		</li>
-	</ul>	
+		    {% for gt2 in gt2s %}
+                {% if gt2.gparentid is goodtype.id %}
+                    <ul>
+			  <div class="title_name">{{ gt2.title }}</div>
+			        <li>
+                          {% for gt3 in gt3s %}
+                              {% if gt3.gparentid is gt2.id %}
+                              <a href="#">{{ gt3.title }}</a>
+                              {% endif %}
+{#                              <a href="#">香蕉</a>#}
+{#                              <a href="#">猕猴桃</a>#}
+{#                              <a href="#"><名称></名称></a>#}
+                            {% endfor %}
+                      </li>
+
+			    </ul>
+                {% endif %}
+
+		    {% endfor %}
+		    
+
+
+         {% endfor %}
+
+        </ul>
 	</div>		
 	</div>
 	<script>$("#allSortOuterbox").slide({ titCell:".Menu_list li",mainCell:".menv_Detail",	});</script>
 	<!--菜单栏-->
 	<div class="Navigation" id="Navigation">
 		 <ul class="Navigation_name">
-		   <li><a href="index.html">首页</a></li>
-		    <li><a href="Products.html">蔬菜</a></li>
-			 <li><a href="#">水果</a></li>
-			  <li><a href="#">特价商品</a></li>
-			   <li><a href="#">粮油</a></li>
-			    <li><a href="#">套餐礼盒</a></li>
-				 <li><a href="#">限时团购</a></li>
+             {% for dbk in dbks %}
+{#                 <li><a href="{% url 'app:index'%} ?id={{ dbk.id }}   ">{{ dbk.hname  }}</a></li>#}
+                 <li><a href="{% url 'app:index1' id=dbk.id  %} ">{{ dbk.hname  }}</a></li>
+
+
+{#                 <li><a href="Products.html">蔬菜</a></li>#}
+{#                     <li><a href="#">水果</a></li>#}
+{#                      <li><a href="#">特价商品</a></li>#}
+{#                       <li><a href="#">粮油</a></li>#}
+{#                        <li><a href="#">套餐礼盒</a></li>#}
+{#                         <li><a href="#">限时团购</a></li>#}
+             {% endfor %}
+
+{#		   <li><a href="index.html">首页</a></li>#}
+{#		    <li><a href="Products.html">蔬菜</a></li>#}
+{#			 <li><a href="#">水果</a></li>#}
+{#			  <li><a href="#">特价商品</a></li>#}
+{#			   <li><a href="#">粮油</a></li>#}
+{#			    <li><a href="#">套餐礼盒</a></li>#}
+{#				 <li><a href="#">限时团购</a></li>#}
 		 </ul>	
 		</div>
 			<script>$("#Navigation").slide({titCell:".Navigation_name li"});</script>

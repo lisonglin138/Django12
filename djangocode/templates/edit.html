@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编译模板</title>
+    <script src="/static/tiny_mce/tiny_mce.js"></script>
+    <script>
+        tinyMCE.init({
+            'mode':'textareas',
+            'width':800,
+            'height':600,
+        })
+    </script>
+</head>
+<body>
+<form action="{% url 'app:edit' %}" method="post">
+    {% csrf_token %}
+    简介：<p>标题 <input type="text" name="title" placeholder="请输入标题" maxlength="20" required></p>
+    <textarea name="content" id="" cols="30" rows="10"></textarea><br>
+    <input type="submit">
+
+
+</form>
+<div>
+    {% autoescape off %}
+    {{ content }}
+    {% endautoescape %}
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

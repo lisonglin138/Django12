@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/static/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/page.css" rel="stylesheet" type="text/css" />
+    <title>登陆</title>
+</head>
+
+<body>
+<div id="topgr" >
+    <div id="rgister_top">
+        <div class="logo"><img src="/static/images/logo.png" /></div>
+    </div>
+</div>
+<div id="rgister">
+    <div class="web_Center clearfix"  style="height: 750px">
+        <div class="AD_img left"><img  src="/static/images/bg_img_07.png"  style="height: 600px"  /></div>
+        <div class="rgister-form right">
+            <div class="rgister-name">
+                <h1 class="name">用户登陆</h1>
+                <span class="login_link"><a href="{% url 'app:register' %}"><b></b>用户注册</a></span></div>
+            <form action="/app/login/"method="post">
+                 {% csrf_token %}
+            <div class="form clearfix" >
+
+                <div class="item item-fore1"><label for="loginname"  class="login-label name-label"></label><input name="uname"   type="text"  class="text" placeholder="请输入用户"/>
+                </div>
+                <div >{{ form.uname.errors }}</div>
+                <div class="item item-fore2"><label for="nloginpwd" class="login-label pwd-label" ></label><input name="upassword_has" type="password"  class="text" placeholder="用户密码"/>
+                </div>
+                <div >{{ form.upassword_has.errors }}</div>
+{#                <div class="Password_qd"><ul><li class="r">弱</li><li class="z">中</li><li class="q">强</li></ul></div>#}
+{#                <div class="item item-fore2"><label for="nloginpwd" class="login-label pwd-label" ></label><input name="confirm_password" type="password"  class="text" placeholder="确认密码"/>#}
+{#                </div>#}
+{#                <div >{{ form.confirm_password.errors }}</div>#}
+{#                                <div class="item item-fore1"><label for="loginname"  class="login-label pwd-label"></label><input name="uemail"   type="text"  class="text" placeholder="请输入邮箱"/>#}
+{#                </div>#}
+{#                <div >{{ form.uemail.errors }}</div>#}
+{#                                <div class="item item-fore1"><label for="loginname"  class="login-label name-label"></label><input name="uphone"   type="text"  class="text" placeholder="请输您的电话"/>#}
+{#                </div>#}
+{#                <div >{{ form.uphone.errors }}</div>#}
+{#                                <div class="item item-fore1"><label for="loginname"  class="login-label name-label"></label><input name="uaddress"   type="text"  class="text" placeholder="请输入您的家庭住址"/>#}
+{#                </div>#}
+{#                                <div class="item item-fore1"><label for="loginname"  class="login-label name-label"></label><input name="uyoubian"   type="text"  class="text" placeholder="请输入您的邮编"/>#}
+{#                </div>#}
+{#                                <div class="item item-fore1"><label for="loginname"  class="login-label name-label"></label><input name="uname"   type="text"  class="text" placeholder="请输入用户"/>#}
+{#                </div>#}
+{#                                <div class="item item-fore1"><label for="loginname"  class="login-label name-label"></label><input name="uname"   type="text"  class="text" placeholder="请输入用户"/>#}
+{#                </div>#}
+
+
+                <div class="item item-fore3"><label  for="nloginpwd" class="login-label vfd-label"></label><input name="" type="text"  class="Verified" placeholder="验证码"/>
+                </div>
+                <div class="right"><img src="/static/images/yzm_img_03.png" /></div>
+            </div>
+            <div class="login-btn">
+{#                <a href="javascript:;" class="btn_login">注&nbsp;&nbsp;&nbsp;&nbsp;册</a>#}
+                <input type="submit"  class="btn_login" value="登          陆">
+            </div>
+            </form>
+        </div>
+    </div>
+    <div   class="web_Center footer">
+        <p><a href="#">关于我们</a> | <a href="#">联系我们</a> | <a href="#">商家入驻</a> | <a href="#">营销中心</a> | 友情链接 | 销售联盟 | 法律申明 | 用户体验提升计划</p>
+        <p>Copyright© 2002-2015 ，鲜篮子版权所有 信息产业部备案许可编号 川ICP备10207551号 川B1-20130131 川B2-20130376 </p>
+    </div>
+
+</div>
+</body>
+</html>
+{#<div>class="web_Center footer"</div>#}

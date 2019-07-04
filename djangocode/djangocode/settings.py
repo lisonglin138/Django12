@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cart',
     'goods',
     'order',
+    'tinymce',
 
 ]
 
@@ -132,5 +133,133 @@ STATIC_URL = '/static/'
 # 静态资源的路径
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
+
 ]
+
+# # smtp服务的邮箱服务器
+# EMAIL_HOST = 'smtp.163.com'
+# # 服务端口
+# EMAIL_PORT = 25
+# # 发送邮件的邮箱
+# EMAIL_HOST_USER='landmark_csl@163.com'
+# # 在邮箱中设置的客户授权密码
+# EMAIL_HOST_PASSWOED='q12345'
+# # 收件人看到的信息
+# EMAIL_FROM='您好啊，收到我的邮件了<landmark_csl@163.com>'
+
+
+#邮件配置
+EMAIL_HOST = "smtp.163.com"  #邮件服务器地址
+EMAIL_PORT = 25   #端口
+EMAIL_HOST_USER = "landmark_csl@163.com"  #发送者帐号
+EMAIL_HOST_PASSWORD = "q12345" #授权码,不是邮箱登录帐号
+EAMIL_FROM = "忘记带伞<landmark_csl@163.com>"
+
+# 富文本编辑器
+
+TINYMEC_DEFAULT_CONFIG={
+    'theme':'advanced',
+    'width':600,
+    'height':400
+}
+
+#文件上传路径设置
+MEDIA_ROOT =os.path.join(BASE_DIR,'static/uploads')
+
+# 允许上传的文件后缀    需要加上 . 在png等文件后缀前，不然匹配不上
+ALLOWED_FILEEXTS = ['.png','.jpeg','.jpg','.gif','.bmp']
+
+
+
+# redis 缓存
+CACHES = {
+    'default':{
+        'BAKCEND':'django_redis.cache.RedisCache',
+            # 指定缓存类型
+        'LOCATION':'redis://39.100.115.35:6379/1',
+
+}
+}
+
+
+
+# #日志配置
+#
+# ADMINS = (
+#     ('tom', 'landmark_csl@163.com'),
+# )
+# # 配置邮件
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# SERVER_EMAIL = EMAIL_HOST_USER
+#
+# #非空链接，却发生404错误，发送通知MANAGERS
+# SEND_BROKEN_LINK_EMAILS = True
+# MANAGERS = ADMINS
+#
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': True,
+#     'formatters': {
+#         'standard': {
+#             'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'}
+#     },
+#     'filters': {  # 过滤条件
+#         # 要求debug是False才记录
+#         'require_debug_false': {
+#             '()': 'django.utils.log.RequireDebugFalse',
+#         }
+#     },
+#     'handlers': {
+#         'null': {
+#             'level': 'DEBUG',
+#             'class': 'logging.NullHandler',
+#         },
+#         'mail_admins': {  # 一旦线上代码报错 邮件提示
+#             'level': 'WARNING',
+#             'class': 'django.utils.log.AdminEmailHandler',
+#             'filters': ['require_debug_false'],
+#             'include_html': True,
+#         },
+#         'debug': {
+#             'level': 'DEBUG',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(BASE_DIR, "log", 'debug.log'),  # 文件路径
+#             'maxBytes': 1024 * 1024 * 5,  # 5兆的数据
+#             'backupCount': 5,  # 允许有5这样的文件
+#             'formatter': 'standard',  # 格式
+#         },
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'standard',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['console','mail_admins','debug'],
+#             'level': 'WARNING',
+#             'propagate': False
+#         },
+#         'django.request': {
+#             'handlers': ['debug', 'mail_admins'],
+#             'level': 'ERROR',
+#             'propagate': True,  # 是否继承父类的log信息
+#         },
+#         # 对于不在 ALLOWED_HOSTS 中的请求不发送报错邮件
+#         'django.security.DisallowedHost': {
+#             'handlers': ['null'],
+#             'propagate': False,
+#         },
+#     }
+# }
+#
+
+
+
+
+
+
+
+
+
 
