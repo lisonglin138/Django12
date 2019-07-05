@@ -104,17 +104,17 @@ def index(request):
     # print(username)
 
     # 大板块遍历
-    dbks = hCategory.objects.filter(hparentid='0').all()
+    dbks = hCategory.objects.filter(hparentid='0',isdelete='0').all()
 
     # 商品类型
-    goodstypes=GoodsType.objects.filter(gparentid='0').all()
+    goodstypes=GoodsType.objects.filter(gparentid='0',isdelete='0').all()
 
     # 此等商品类型
     list1=goodstypes.values('id')
-    gt2s=GoodsType.objects.filter(gparentid__in= list1)
+    gt2s=GoodsType.objects.filter(gparentid__in= list1,isdelete='0')
     # 具体商品
     list2 =gt2s.values('id')
-    gt3s = GoodsType.objects.filter(gparentid__in=list2)
+    gt3s = GoodsType.objects.filter(gparentid__in=list2,isdelete='0')
     print(list2)
 
 
@@ -122,7 +122,7 @@ def index(request):
     hnames=dbks.values('hname')
     # 大板块下的小版块
     # 大于0的模块
-    xbks=hCategory.objects.filter(hparentid__gt='0').all()
+    xbks=hCategory.objects.filter(hparentid__gt='0',isdelete='0').all()
 
 
     # print(xbks)
