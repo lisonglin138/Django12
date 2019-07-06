@@ -515,6 +515,7 @@ def Shopping_Cart(request):
     return render(request,'Shopping_Cart.html',context={
         'title':'购物车',
         'username': username,
+        'cars':cars,
 
 
 
