@@ -31,10 +31,19 @@ urlpatterns = [
     # url(r'^index/(?P<id>\d+)/$',views.index,name="index1"),
 
     url(r'^Preferential/$',views.Preferential,name="Preferential"),
+
+
     url(r'^Product_list/$',views.Product_list,name="Product_list"),
+    url(r'^Product_list/(?P<id>\d+)/$', views.Product_list1, name="Product_list1"),
+
+
+
     url(r'^Products/$',views.Products,name="Products"),
+    url(r'^Products/(?P<id>\d+)/$', views.Products1, name="Products1"),
 
     url(r'^Products_Detailed/$', views.Products_Detailed, name="Products_Detailed"),
+    url(r'^Products_Detailed/(?P<gid>\d+)/$', views.Products_Detailed1, name="Products_Detailed1"),
+
     url(r'^Shopping_Cart/$', views.Shopping_Cart, name="Shopping_Cart"),
     url(r'^User_center/$', views.User_center, name="User_center"),
     url(r'^aa/$', views.aa, name="aa"),

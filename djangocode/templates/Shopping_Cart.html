@@ -1,7 +1,10 @@
+{% load static %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {% block ext_css %}
 <link href="/static/css/common.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/style.css" rel="stylesheet" type="text/css" />
 <link href="/static/css/page.css" rel="stylesheet" type="text/css" />
@@ -9,16 +12,18 @@
 <script src="/static/js/jquery1.42.min.js" type="text/javascript"></script>
 <script src="/static/js/common_js.js" type="text/javascript"></script>
 <script src="/static/js/jquery.SuperSlide.2.1.1.js" type="text/javascript"></script>
-<title>购物车</title>
+    {% endblock %}
+<title>{{ title }}</title>
 </head>
 <body>
+
 <!--顶部样式-->
 <div id="top">
   <div class="top zp_top clearfix">
     <div class="Collection"><em></em><a href="#">收藏我们</a></div>
 	<div class="hd_top_manu clearfix">
 	  <ul class="clearfix">
-	   <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<a href="#" class="red">[请登录]</a> 新用户<a href="#" class="red">[免费注册]</a></li>
+	   <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<a href="#" class="red">{{ username }}</a> 新用户<a href="{% url 'app:User_center' %}" class="red">[用户中心]</a></li>
 	   <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">我的订单</a></li>
 	   <li class="hd_menu_tit hd_Shopping_Cart" data-addclass="hd_menu_hover">
 	     <a href="#" class="hd_menu">购物车(<b>0</b>)</a>
@@ -51,6 +56,7 @@
 	</div>
   </div>
 </div>
+{% block header %}
 <div id="header" class="header zp_header">
   <div class="logo"><a href="#"><img src="/static/images/logo.png" /></a></div>
   <div class="Search">
@@ -58,6 +64,8 @@
 	<p class="Words"><a href="#">苹果</a><a href="#">香蕉</a><a href="#">菠萝</a><a href="#">西红柿</a><a href="#">橙子</a><a href="#">苹果</a></p>
 </div>
 </div>
+{% endblock %}
+ {% block content1 %}
 <div class="zp_Shopping_cart clearfix">
   <div class="flow_step_no1 Process clearfix">
   <ul>
@@ -189,6 +197,9 @@
 	</div>
  </div>
 </div>
+{% endblock %}
+
+{% block footer %}
 <div id="zp_footer">
 <div class="service clearfix">
 <dl class="fore">
@@ -254,5 +265,6 @@
 	<div>Copyright© 2002-2015 ，鲜篮子版权所有 信息产业部备案许可编号 川ICP备10207551号 川B1-20130131 川B2-20130376 </div>
 	<div><a href="#"><img src="/static/images/12.gif" /></a><a href="#"><img src="/static/images/108_40_zZOKnl.gif" /></a><a href="#"><img src="/static/images/112_40_WvArIl.png" /></a></div>
 </div></div>
+{% endblock %}
 </body>
 </html>

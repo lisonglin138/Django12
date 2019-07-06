@@ -11,11 +11,12 @@ from django.urls import reverse
 
 from App.forms import UserInfoForm, loginForm
 from App.models import UserInfo, hCategory
+from cart.models import CartInfo
 from djangocode import settings
 
 import logging
 
-from goods.models import GoodsType
+from goods.models import GoodsType, GoodsInfo
 
 logger = logging.getLogger('django')
 
@@ -44,8 +45,7 @@ def register(request):
             return redirect(reverse('app:index'))
 
         # return render(request, 'Register.html')
-        # uname = request.POST.get('username')
-        # print(uname)
+        # uname = request.POST.get('username')        # print(uname)
 
         return render(request, 'Register.html',context={'form':form})
 
@@ -93,7 +93,105 @@ def Preferential(request):
 
 
 def Product_list(request):
-    return render(request,'Product_list.html')
+    # 从缓存获取数据
+    # data = cache.get()
+    username = request.session.get('uname')
+    # print(username)
+
+    # 大板块遍历
+    dbks = hCategory.objects.filter(hparentid='0', isdelete='0').all()
+
+    # 商品类型
+    goodstypes = GoodsType.objects.filter(gparentid='0', isdelete='0').all()
+
+    # 此等商品类型
+    list1 = goodstypes.values('id')
+    gt2s = GoodsType.objects.filter(gparentid__in=list1, isdelete='0')
+    # 具体商品
+    list2 = gt2s.values('id')
+    gt3s = GoodsType.objects.filter(gparentid__in=list2, isdelete='0')
+    print(list2)
+
+    # print(res.values('hname'))
+    hnames = dbks.values('hname')
+    # 大板块下的小版块
+    # 大于0的模块
+    xbks = hCategory.objects.filter(hparentid__gt='0', isdelete='0').all()
+
+    # print(xbks)
+    hparentid = xbks.values('hparentid')
+
+    # 水果区
+    Fruits = GoodsInfo.objects.filter(gtype='1').all()
+    print(Fruits)
+
+    return render(request, 'Product_list.html', context={
+        'title': '产品展示',
+        'username': username,
+        'hnames': hnames,
+        'dbks': dbks,
+        'goodstypes': goodstypes,
+        'gt2s': gt2s,
+        'gt3s': gt3s,
+        'Fruits': Fruits,
+
+    })
+    # return render(request,'Product_list.html')
+
+def Product_list1(request ,id):
+    # 从缓存获取数据
+    # data = cache.get()
+    username = request.session.get('uname')
+    # print(username)
+
+    # 大板块遍历
+    dbks = hCategory.objects.filter(hparentid='0').all()
+    # print(res.values('hname'))
+    hnames = dbks.values('hname')
+    # 大板块下的小版块
+    # 大于0的模块
+    xbks = hCategory.objects.filter(hparentid__gt='0').all()
+    # print(xbks)
+    hparentid = xbks.values('hparentid')
+    # if request.method == 'GET':
+    #     id = int(id)
+    #     # 主页
+    #     if id == 1:
+    #         return redirect(reverse('app:index'))
+    #     # 蔬菜
+    #     elif id == 2:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 水果
+    #     elif id == 3:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 特价水果
+    #     elif id == 4:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 粮油
+    #     elif id == 5:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 套餐礼盒
+    #     elif id == 6:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 限时团购
+    #     elif id == 7:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+
+    return render(request, 'Product_list.html', context={
+        'title': '产品展示',
+        'username': username,
+        'hnames': hnames,
+        'dbks': dbks,
+    })
+
+
+
 
 # 使用redis做缓存
 def index(request):
@@ -112,10 +210,12 @@ def index(request):
     # 此等商品类型
     list1=goodstypes.values('id')
     gt2s=GoodsType.objects.filter(gparentid__in= list1,isdelete='0')
+
+
     # 具体商品
     list2 =gt2s.values('id')
     gt3s = GoodsType.objects.filter(gparentid__in=list2,isdelete='0')
-    print(list2)
+    # print(list2)
 
 
     # print(res.values('hname'))
@@ -129,6 +229,15 @@ def index(request):
     hparentid = xbks.values('hparentid')
 
 
+    # 水果区
+    Fruits = GoodsInfo.objects.filter(gtype='1').all()
+    print(Fruits)
+
+    # 首页商品默认放六个
+    fruit6=Fruits[0:6]
+
+    # print(fruit6)
+
     return render(request,'index.html',context={
         'title': '商城首页',
         'username':username,
@@ -137,6 +246,8 @@ def index(request):
         'goodstypes':goodstypes,
         'gt2s':gt2s,
         'gt3s': gt3s,
+        'Fruits':Fruits,
+        'fruit6':fruit6
 
     })
 
@@ -159,7 +270,7 @@ def index1(request ,id):
         id = int(id)
         # 主页
         if id == 1:
-            return render(request, 'index.html')
+            return redirect(reverse('app:index'))
         # 蔬菜
         elif id == 2:
             # return render(request,'Products.html')
@@ -193,15 +304,222 @@ def index1(request ,id):
     })
 
 def Products(request):
-    return render(request,'Products.html')
+    # 从缓存获取数据
+    # data = cache.get()
+    username = request.session.get('uname')
+    # print(username)
 
+    # 大板块遍历
+    dbks = hCategory.objects.filter(hparentid='0', isdelete='0').all()
+
+    # 商品类型
+    goodstypes = GoodsType.objects.filter(gparentid='0', isdelete='0').all()
+
+    # 此等商品类型
+    list1 = goodstypes.values('id')
+    gt2s = GoodsType.objects.filter(gparentid__in=list1, isdelete='0')
+    # 具体商品
+    list2 = gt2s.values('id')
+    gt3s = GoodsType.objects.filter(gparentid__in=list2, isdelete='0')
+    print(list2)
+
+    # print(res.values('hname'))
+    hnames = dbks.values('hname')
+    # 大板块下的小版块
+    # 大于0的模块
+    xbks = hCategory.objects.filter(hparentid__gt='0', isdelete='0').all()
+
+    # print(xbks)
+    hparentid = xbks.values('hparentid')
+
+    # 水果区
+    Fruits = GoodsInfo.objects.filter(gtype='1').all()
+    # 价格最低的四个水果
+    lfruits=Fruits.order_by('gprice')[0:4]
+    # print(lfruits)
+    # print(Fruits)
+
+
+
+
+
+
+
+    return render(request, 'Products.html', context={
+        'title': '产品展示',
+        'username': username,
+        'hnames': hnames,
+        'dbks': dbks,
+        'goodstypes': goodstypes,
+        'gt2s': gt2s,
+        'gt3s': gt3s,
+        'Fruits': Fruits,
+        'lfruits':lfruits,
+
+    })
+    # return render(request,'Product_list.html')
+    return render(request,'Products.html')
+def Products1(request ,id):
+    # 从缓存获取数据
+    # data = cache.get()
+    username = request.session.get('uname')
+    # print(username)
+
+    # 大板块遍历
+    dbks = hCategory.objects.filter(hparentid='0').all()
+    # print(res.values('hname'))
+    hnames = dbks.values('hname')
+    # 大板块下的小版块
+    # 大于0的模块
+    xbks = hCategory.objects.filter(hparentid__gt='0').all()
+    # print(xbks)
+    hparentid = xbks.values('hparentid')
+    # if request.method == 'GET':
+    #     id = int(id)
+    #     # 主页
+    #     if id == 1:
+    #         return redirect(reverse('app:index'))
+    #     # 蔬菜
+    #     elif id == 2:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 水果
+    #     elif id == 3:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 特价水果
+    #     elif id == 4:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 粮油
+    #     elif id == 5:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 套餐礼盒
+    #     elif id == 6:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+    #     # 限时团购
+    #     elif id == 7:
+    #         # return render(request,'Products.html')
+    #         return redirect(reverse('app:Products'))
+
+    return render(request, 'Products.html', context={
+        'title': '产品展示',
+        'username': username,
+        'hnames': hnames,
+        'dbks': dbks,
+    })
 
 def Products_Detailed(request):
-    return render(request,'Products_Detailed.html')
+    # 从缓存获取数据
+    # data = cache.get()
+    username = request.session.get('uname')
+    # print(username)
 
+    # 大板块遍历
+    dbks = hCategory.objects.filter(hparentid='0', isdelete='0').all()
+
+    # 商品类型
+    goodstypes = GoodsType.objects.filter(gparentid='0', isdelete='0').all()
+
+    # 此等商品类型
+    list1 = goodstypes.values('id')
+    gt2s = GoodsType.objects.filter(gparentid__in=list1, isdelete='0')
+    # 具体商品
+    list2 = gt2s.values('id')
+    gt3s = GoodsType.objects.filter(gparentid__in=list2, isdelete='0')
+    print(list2)
+
+    # print(res.values('hname'))
+    hnames = dbks.values('hname')
+    # 大板块下的小版块
+    # 大于0的模块
+    xbks = hCategory.objects.filter(hparentid__gt='0', isdelete='0').all()
+
+    # print(xbks)
+    hparentid = xbks.values('hparentid')
+
+    # 水果区
+    Fruits = GoodsInfo.objects.filter(gtype='1').all()
+    # 价格最低的四个水果
+    lfruits = Fruits.order_by('gprice')[0:4]
+    # print(lfruits)
+    # print(Fruits)
+
+
+    return render(request, 'Products_Detailed.html', context={
+        'title': '产品展示',
+        'username': username,
+        'hnames': hnames,
+        'dbks': dbks,
+        'goodstypes': goodstypes,
+        'gt2s': gt2s,
+        'gt3s': gt3s,
+        'Fruits': Fruits,
+        'lfruits': lfruits,
+
+    })
+
+
+def Products_Detailed1(request ,gid):
+
+    # 从缓存获取数据
+    # data = cache.get()
+    username = request.session.get('uname')
+    # print(username)
+
+    # 大板块遍历
+    dbks = hCategory.objects.filter(hparentid='0').all()
+    # print(res.values('hname'))
+    hnames = dbks.values('hname')
+    # 大板块下的小版块
+    # 大于0的模块
+    xbks = hCategory.objects.filter(hparentid__gt='0').all()
+
+    good=GoodsInfo.objects.filter(pk=gid).first()
+    print(good.gprice)
+
+    # 商品类型
+    goodstypes = GoodsType.objects.filter(gparentid='0', isdelete='0').all()
+    # 此等商品类型
+    list1 = goodstypes.values('id')
+    gt2s = GoodsType.objects.filter(gparentid__in=list1, isdelete='0')
+
+    # 具体商品
+    list2 = gt2s.values('id')
+    gt3s = GoodsType.objects.filter(gparentid__in=list2, isdelete='0')
+    # print(list2)
+
+
+
+    return render(request, 'Products_Detailed.html', context={
+        'title': '产品展示',
+        'username': username,
+        'hnames': hnames,
+        'dbks': dbks,
+        'goodstypes': goodstypes,
+        'gt2s': gt2s,
+        'gt3s': gt3s,
+        'good':good
+    })
 
 def Shopping_Cart(request):
-    return render(request,'Shopping_Cart.html')
+    username = request.session.get('uname')
+    print(username)
+
+    cars=CartInfo.objects.filter(user__uname=username)
+
+
+
+    return render(request,'Shopping_Cart.html',context={
+        'title':'购物车',
+        'username': username,
+
+
+
+
+    })
 
 
 def User_center(request):

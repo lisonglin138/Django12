@@ -34,6 +34,7 @@ class GoodsInfo(models.Model):
     # 商品详情
     # 一对多
     gtype=models.ForeignKey(GoodsType,on_delete=models.CASCADE,db_column='gtype',related_name='goodsinfo',)
+    gaddress=models.CharField(max_length=128,null=True)
 
     class Meta:
         db_table="GoodsInfo"

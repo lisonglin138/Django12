@@ -1,10 +1,7 @@
 {% extends 'Product_list.html' %}
 {% load static %}
 
-<head>
-<title>产品展示</title>
 
-</head>
 
 
 
@@ -15,7 +12,7 @@
 <!--内容样式-->
 <div id="page">
   <!--位置-->
- <div class="Position">当前位置：<a href="#">首页</a> > <a  href="#">产品列表</a></div>
+ <div class="Position">当前位置：<a href="{% url 'app:index' %}">首页</a> > <a  href="{% url 'app:Products' %}">产品列表</a></div>
  <!--详细内容-->
  <div class="detailed">
    <div class="showContent margin clearfix">
@@ -48,17 +45,19 @@
  </div>
   	<!--购买样式-->
    	<div class="p_right_style">
-	  <div class="title_name"><h1>种植新品 新鲜蔬菜 甜脆 精品萝卜 胡萝卜500g</h1><p class="p_ad">吃点好的 很有必要！每日新现采现包 精品无污染 尊享新鲜好蔬菜！</p></div>
+	  <div class="title_name"><h1>新品 {{ good.gcontent }}</h1><p class="p_ad">吃点好的 很有必要！每日新现采现包 精品无污染 尊享新鲜！</p></div>
 	   <div id="summary">
 	     <div class="p_Price">
 		 <div class="dt">价&nbsp;&nbsp;&nbsp;格:</div>
-		 <div class="dd"><strong class="p_dd_price" id="xs-price">￥89.00</strong><span class="y_price">￥111.00</span><span class="Grade">VIP</span></div>
+		 <div class="dd"><strong class="p_dd_price" id="xs-price">￥{{ good.gprice }}</strong>
+{#             <span class="y_price">￥111.00</span><span class="Grade">VIP</span>#}
+         </div>
 		 <div class="Comment"><p>累计评论</p><h6 ><a href="#">33</a></h6></div>
 	   </div>
 	   <div class="Sort">
-	     <dl><dt class="name">重&nbsp;&nbsp;&nbsp;量:</dt><dd class="">500k/斤</dd></dl>
-		 <dl><dt class="name">数&nbsp;&nbsp;&nbsp;量:</dt><dd class="">500k/斤</dd></dl>
-		 <dl><dt class="name">售&nbsp;&nbsp;&nbsp;出:</dt><dd class="">500k/斤</dd></dl>
+	     <dl><dt class="name">重&nbsp;&nbsp;&nbsp;量:</dt><dd class="">{{ good.gweight }}/斤</dd></dl>
+		 <dl><dt class="name">数&nbsp;&nbsp;&nbsp;量:</dt><dd class="">{{ good.gsum }}斤</dd></dl>
+		 <dl><dt class="name">售&nbsp;&nbsp;&nbsp;出:</dt><dd class="">{{ '###' }}</dd></dl>
 		 </ul>
 	   </div>
 	   <div class="p_Submit">
@@ -68,7 +67,7 @@
 		  <a href="javascript:void(0);" onclick="updatenum('del');">+</a>
 		 </div>
 		 <div class="btn_Submit">
-		  <a href="javascript:addToCart_bak(74)" class="wrap_btn1" title="加入购物车"></a>
+		  <a href="{% url 'app:Shopping_Cart' %}" class="wrap_btn1" title="加入购物车"></a>
 		  <a href="javascript:addToCart(74)" class="wrap_btn2" title="立即购买"></a>
 		 </div>
 	   </div>

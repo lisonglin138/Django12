@@ -10,7 +10,7 @@
                 <div class="Collection"><em></em><a href="#">收藏我们</a></div>
                 <div class="hd_top_manu clearfix">
                     <ul class="clearfix">
-                        <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<a href="#" class="red">{{ username }}</a> 很高兴<a href="#" class="red">见到您</a></li>
+                        <li class="hd_menu_tit zhuce" data-addclass="hd_menu_hover">欢迎光临本店！<a href="#" class="red">{{ username }}</a> aaaa<a href="{% url 'app:User_center' %}" class="red">用户中心</a></li>
                         <li class="hd_menu_tit" data-addclass="hd_menu_hover"><a href="#">我的订单</a></li>
                         <li class="hd_menu_tit hd_Shopping_Cart" data-addclass="hd_menu_hover">
                             <a href="#" class="hd_menu">购物车(<b>0</b>)</a>
@@ -127,7 +127,7 @@
                                 {% endif %}
 
                             {% endfor %}
-
+                            </div>
                         {% endfor %}
 
                     </ul>
@@ -189,180 +189,7 @@
 {% endblock %}
 {% block content4 %}
     <div id="mian">
-        <div class="style1">
-            <!--左侧内容-->
-            <div class="left_Notice">
-                <div class="Notice_style">
-                    <ul class="Notice_img">
-                        <li class="anquan"></li>
-                        <li class="style_xd"></li>
-                        <li class="lvse"></li>
-                        <li class="style_xd"></li>
-                        <li class="chenxin"></li>
-                    </ul>
-                    <!--切换-->
-                    <div class="slideTxtBox">
-                        <div class="hd">
 
-                            <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
-                            <span class="arrow"><a class="next"></a><a class="prev"></a></span>
-
-                            <ul><li>通知公告</li><li>商城新闻</li></ul>
-                        </div>
-                        <div class="bd">
-                            <ul>
-                                <li><a href="#" target="_blank">中国打破了世界软件巨头规则</a></li>
-
-                            </ul>
-                            <ul>
-                                <li><a href="#" target="_blank">名师教作文：３妙招巧写高分</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-                    <script type="text/javascript">jQuery(".slideTxtBox").slide();</script>
-                </div>
-            </div>
-            <!--右侧内容-->
-            <div class="right_Discount">
-                <div class="Discount_style">
-                    <div class="hd">
-
-                        <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
-                        <span class="arrow"><a class="next"></a><a class="prev"></a></span>
-
-                        <ul>
-                            <li><a href="#">限时团购</a></li>
-                            <li><a href="#">特价商品</a></li>
-                            <li><a href="#">套餐礼盒</a></li>
-                        </ul>
-                    </div>
-                    <div class="bd">
-                        <ul class="Limit">
-                            <div class="title_name">限时团购 <span>Limit buy</span></div>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                    <p><span class="time">7:21:08</span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                    <p><span class="time">7:21:08</span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                    <p><span class="time">7:21:08</span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                    <p><span class="time">7:21:08</span></p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                    <p><span class="time">7:21:08</span></p>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="Limit">
-                            <div class="title_name">特价商品<span>Sale merchandise</span></div>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="Limit">
-                            <div class="title_name">套餐礼盒 <span>Gift Packages</span></div>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="E">
-                                    <p><img src="/static/images/cp-1.jpg" /></p>
-                                    <p>金龙鱼5升非转基因大豆油</p>
-                                    <p class="Price">现价：￥25.50元</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-                <script type="text/javascript">jQuery(".Discount_style").slide();</script>
-            </div>
-        </div>
         <!--热卖产品样式-->
         <div class="Selling">
             <div class="title_name">热销产品<span class="ew">Hot Products</span> <span class="jiesao">本商城最热销产品，保证安全同时与客户的见证</span><span class="more"><a href="#">更多<< </a></span></div>
@@ -438,102 +265,27 @@
                 </div>
                 <div class="Fruits_there">
                     <ul id="lists">
+                        {% for fruit in fruit6 %}
                         <li>
                             <div class="xianhi">
-                                <a href="#">
+                                <a href="{% url 'app:Products_Detailed1' gid=fruit.id  %}">
                                     <p><img src="/static/images/p_sg_13.png" /></p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="Price">普通：￥6.35/500g</p>
+                                    <p>{{ fruit.gdesc }}</p>
+                                    <p class="Price">普通：￥{{ fruit.gprice }}/{{ fruit.gwight }}</p>
                                 </a>
                             </div>
                             <div class="Detailed">
                                 <div class="content">
-                                    <p class="addess">产地：中国山东烟台</p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃山东泰山大樱桃车厘子水果烟台樱桃</p>
+                                    <p class="addess">产地：{{ fruit.gaddress }}</p>
+                                    <p>{{ fruit.gcontent }}</p>
                                     <p class="center"><a href="#" class="Buy_btn">立即购买</a></p>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="xianhi">
-                                <a href="#">
-                                    <p><img src="/static/images/p_sg_13.png" /></p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="Price">普通：￥6.35/500g</p>
-                                </a>
-                            </div>
-                            <div class="Detailed">
-                                <div class="content">
-                                    <p class="addess">产地：中国山东烟台</p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="center"><a href="#" class="Buy_btn">立即购买</a></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="xianhi">
-                                <a href="#">
-                                    <p><img src="/static/images/p_sg_13.png" /></p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="Price">普通：￥6.35/500g</p>
-                                </a>
-                            </div>
-                            <div class="Detailed">
-                                <div class="content">
-                                    <p class="addess">产地：中国山东烟台</p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="center"><a href="#" class="Buy_btn">立即购买</a></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="xianhi">
-                                <a href="#">
-                                    <p><img src="/static/images/p_sg_13.png" /></p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="Price">普通：￥6.35/500g</p>
-                                </a>
-                            </div>
-                            <div class="Detailed">
-                                <div class="content">
-                                    <p class="addess">产地：中国山东烟台</p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="center"><a href="#" class="Buy_btn">立即购买</a></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="xianhi">
-                                <a href="#">
-                                    <p><img src="/static/images/p_sg_13.png" /></p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="Price">普通：￥6.35/500g</p>
-                                </a>
-                            </div>
-                            <div class="Detailed">
-                                <div class="content">
-                                    <p class="addess">产地：中国山东烟台</p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="center"><a href="#" class="Buy_btn">立即购买</a></p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="xianhi">
-                                <a href="#">
-                                    <p><img src="/static/images/p_sg_13.png" /></p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="Price">普通：￥6.35/500g</p>
-                                </a>
-                            </div>
-                            <div class="Detailed">
-                                <div class="content">
-                                    <p class="addess">产地：中国山东烟台</p>
-                                    <p>山东泰山大樱桃车厘子水果烟台樱桃山东泰山大樱桃车厘子水果烟台樱桃</p>
-                                    <p class="center"><a href="#" class="Buy_btn">立即购买</a></p>
-                                </div>
-                            </div>
-                        </li>
+                        {% endfor %}
+
+
+
                     </ul>
 
                 </div>

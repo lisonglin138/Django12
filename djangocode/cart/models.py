@@ -12,7 +12,7 @@ class CartInfo(models.Model):
     # 外键商品
     count = models.IntegerField(default=1)
     # 记录用户买了多少个单位的商品
-    c_is_select = models.BooleanField(default=True)
+    c_is_select = models.BooleanField(default='1')
     # 购物车中选中的商品，默认为选中，0为不勾选，
     class Meta:
         db_table='cartinfo'

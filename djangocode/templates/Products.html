@@ -2,7 +2,7 @@
 {% load static %}
 
 <head>
-<title>产品展示</title>
+    <title>产品展示</title>
 
 </head>
 
@@ -10,340 +10,229 @@
 
 
 
-    {% block content4 %}
+{% block content4 %}
 
-<!--内容样式-->
-<div id="page">
-  <!--热卖商品-->
- <div class="Hot_products">
-   <div class="hd">热卖产品</div>
-   <ul>
-	<li>
-	 <div class="img"><a href="#"><img src="/static/images/cp-6.jpg" /></a></div>
-	 <div class="product_js">
-	 <p class="title_name"><a href="#">本地新鲜桃子名称</a></p>
-	 <p >特价：<b>￥6.30</b></p>
-	 <p><a href="#" class="gm_btn">立即购买</a></p>
-	 </div>
-	</li>
-	<li>
-	 <div class="img"><a href="#"><img src="/static/images/cp-6.jpg" /></a></div>
-	 <div class="product_js">
-	 <p class="title_name"><a href="#">本地新鲜桃子名称</a></p>
-	 <p >特价：<b>￥6.30</b></p>
-	 <p><a href="#" class="gm_btn">立即购买</a></p>
-	 </div>
-	</li>
-	<li>
-	 <div class="img"><a href="#"><img src="/static/images/cp-6.jpg" /></a></div>
-	 <div class="product_js">
-	 <p class="title_name"><a href="#">本地新鲜桃子名称</a></p>
-	 <p >特价：<b>￥6.30</b></p>
-	 <p><a href="#" class="gm_btn">立即购买</a></p>
-	 </div>
-	</li>
-	<li>
-	 <div class="img"><a href="#"><img src="/static/images/cp-6.jpg" /></a></div>
-	 <div class="product_js">
-	 <p class="title_name"><a href="#">本地新鲜桃子名称</a></p>
-	 <p >特价：<b>￥6.30</b></p>
-	 <p><a href="#" class="gm_btn">立即购买</a></p>
-	 </div>
-	</li>
-   </ul>
- </div>
- <!--位置-->
- <div class="Position">当前位置：<a href="#">首页</a> > <a  href="#">产品列表</a></div>
- <!--内容展示区样式-->
- <div class="Show_style">
-  <div class="left_style">
-   <div class="sideMenu" style="margin:0 auto">
-            <div class="title_name">导航栏</div>
-			<h3 class="on">
-			<em></em>蔬菜系列</h3>
-			<ul class="name_link">
-			<li>
-			<a href="#">大白菜</a> |
-			<a href="#">胡萝卜</a> |
-			<a href="#">青菜</a> |
-			<a href="#">西红柿</a> |
-			<a href="#">花菜</a> |
-			<a href="#">黄瓜</a> |
-			<a href="#">大白菜</a> |
-			<a href="#">大白菜</a> |
-			</li>
-			</ul>
-			<h3><em></em>水果系列</h3>
-			<ul>
-				<li>
-			<a href="#">大白菜</a> |
-			<a href="#">胡萝卜</a> |
-			<a href="#">青菜</a> |
-			<a href="#">西红柿</a> |
-			<a href="#">花菜</a> |
-			<a href="#">黄瓜</a> |
-			<a href="#">大白菜</a> |
-			<a href="#">大白菜</a> |
-			</li>
-			</ul>
-			<h3><em></em>粮油系列</h3>
-			<ul>
-			<li>
-			<a href="#">大白菜</a> |
-			<a href="#">胡萝卜</a> |
-			<a href="#">青菜</a> |
-			<a href="#">西红柿</a> |
-			<a href="#">花菜</a> |
-			<a href="#">黄瓜</a> |
-			<a href="#">大白菜</a> |
-			<a href="#">大白菜</a> |
-			</li>
-			</ul>
+    <!--内容样式-->
+    <div id="page">
+        <!--热卖商品-->
+        <div class="Hot_products">
+            <div class="hd">热卖产品</div>
+            <ul>
+                {% for lfruit in lfruits %}
+                    <li>
+                    <div class="img"><a href="#"><img src="/static/images/cp-6.jpg" /></a></div>
+                    <div class="product_js">
+                        <p class="title_name"><a href="#">新鲜{{lfruit.gname}}</a></p>
+                        <p >特价：<b>￥{{ lfruit.gprice }}</b></p>
+                        <p><a href="#" class="gm_btn">立即购买</a></p>
+                    </div>
+                </li>
+                {% endfor %}
 
-		</div><!-- sideMenu End -->
-		<script type="text/javascript">
-			jQuery(".sideMenu").slide({
-				titCell:"h3", //鼠标触发对象
-				targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
-				effect:"slideDown", //targetCell下拉效果
-				trigger:"click",
-				defaultIndex:1,
-				triggerTime:150, //鼠标延迟触发时间（默认150）
-				defaultPlay:true,//默认是否执行效果（默认true）
-				returnDefault:false //鼠标从.sideMen移走后返回默认状态（默认false）
-				});
-		</script>
-		<!--记录-->
-   <div class="Record">
-     <div class="title_name">浏览记录</div>
-	 <ul>
-	  <li>
-	   <a href="#">
-	   <P><img src="/static/images/cp-7.jpg" /></P>
-	   <p>商品名称</p>
-	   </a>
-	   <p>价格:<b>￥5.30</b></p>
-	  </li>
-	  <li>
-	   <a href="#">
-	   <P><img src="/static/images/cp-7.jpg" /></P>
-	   <p>商品名称</p>
-	   </a>
-	   <p>价格:<b>￥5.30</b></p>
-	  </li>
-	  <li>
-	   <a href="#">
-	   <P><img src="/static/images/cp-7.jpg" /></P>
-	   <p>商品名称</p>
-	   </a>
-	   <p>价格:<b>￥5.30</b></p>
-	  </li>
-	 </ul>
-   </div>
-  </div>
-  <div class="right_style">
-  <div class="Operation">
-   <span><a href="#" class="on">默认</a><a href="#">销量<em></em></a><a href="#">价格<em></em></a><a href="#">上架时间</a></span>
-   <span class="img_lists"><em></em><a href="#">大图</a></span>
-  </div>
-  <div class="product_list">
-   <ul class="product_name">
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-    <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-    <li>
-   <div class="p_item">
-   <div class="Weight">500g/斤</div>
-    <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
-	<div class="p_price">普通价：<b>￥32.30</b> <span class="yuanjia">￥35.23</span></div>
-	<div class="p_name"><a href="#">金龙鱼 东北大米 粳米 生态稻大米5kg</a></div>
-	<div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
-	</div>
-   </li>
-   </ul>
-  </div>
-  <div class="Paging">
-     <a href="#" class="pn-prev disabled"><i>&lt;</i>上一页</a>
-	 <a href="#">1</a>
-	 <a href="#">2</a>
-	 <a href="#">3</a>
-	 <a href="#">4</a>
-	 <a href="#">下一页<i>&gt;</i></a>
-	 <a href="#">尾页</a>
-	<span class="p-skip"><em>共<b>232</b>页&nbsp;&nbsp;到第</em><input id="page_jump_num" value="1" onkeydown="javascript:if(event.keyCode==13){page_jump();return false;}" class="input-txt"><em>页</em><a href="javascript:page_jump();" class="btn btn-default">确定</a></span>
-   </div>
-  </div>
- </div>
 
-<!--底部样式-->
- <div class="slogen">
-   <p><img src="/static/images/fuwu_56.png" /></p>
-   <p><img src="/static/images/fuwu_57.png" /></p>
-   <p><img src="/static/images/fuwu_58.png" /></p>
-   <p><img src="/static/images/fuwu_59.png" /></p>
- </div>
- <div class="footer">
-   <div class="left_footer">
-    <div class="b_mc_y"><p class="tubiao"></p><p class="gy_name">品质保证 安全放心<br /><span>打造蔬菜水果专业购物平台</span></p></div>
-	<div class="b_mc_y"><p class="phone_img"></p><p class="phone"><b>028-44332-2232</b><br /><span>周一至周六 10:00-22:00</span></p></div>
-	<div class="b_mc_y"><p class="phone_sj_img"></p><p class="phone"><b>189083323211</b><br /><span>24小时客户服务热线</span></p></div>
-   </div>
-   <div class="right_footer">
-   <dl class="fore1">
-			<dt><strong>购物指南</strong></dt>
-			<dd>
-				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
-			</dd>
-		</dl>
-		 <dl class="fore1">
-			<dt><strong>购物指南</strong></dt>
-			<dd>
-				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
-			</dd>
-		</dl>
-		 <dl class="fore1">
-			<dt><strong>购物指南</strong></dt>
-			<dd>
-				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
-			</dd>
-		</dl>
-		 <dl class="fore1">
-			<dt><strong>购物指南</strong></dt>
-			<dd>
-				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
-			</dd>
-		</dl>
-		 <dl class="fore1">
-			<dt><strong>购物指南</strong></dt>
-			<dd>
-				<div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
-				<div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
-			</dd>
-		</dl>
-   </div>
- </div>
-</div>
-    {% endblock %}
+            </ul>
+        </div>
+        <!--位置-->
+        <div class="Position">当前位置：<a href="{% url 'app:index' %}">首页</a> > <a  href="#">产品列表</a></div>
+        <!--内容展示区样式-->
+        <div class="Show_style">
+            <div class="left_style">
+{#                <div class="sideMenu" style="margin:0 auto">#}
+{#                    <div class="title_name">导航栏</div>#}
+{#                    <h3 class="on">#}
+{#                        <em></em>蔬菜系列</h3>#}
+{#                    <ul class="name_link">#}
+{#                        <li>#}
+{#                            <a href="#">大白菜</a> |#}
+{#                            <a href="#">胡萝卜</a> |#}
+{#                            <a href="#">青菜</a> |#}
+{#                            <a href="#">西红柿</a> |#}
+{#                            <a href="#">花菜</a> |#}
+{#                            <a href="#">黄瓜</a> |#}
+{#                            <a href="#">大白菜</a> |#}
+{#                            <a href="#">大白菜</a> |#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                    <h3><em></em>水果系列</h3>#}
+{#                    <ul>#}
+{#                        <li>#}
+{#                            <a href="#">大白菜</a> |#}
+{#                            <a href="#">胡萝卜</a> |#}
+{#                            <a href="#">青菜</a> |#}
+{#                            <a href="#">西红柿</a> |#}
+{#                            <a href="#">花菜</a> |#}
+{#                            <a href="#">黄瓜</a> |#}
+{#                            <a href="#">大白菜</a> |#}
+{#                            <a href="#">大白菜</a> |#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                    <h3><em></em>粮油系列</h3>#}
+{#                    <ul>#}
+{#                        <li>#}
+{#                            <a href="#">大白菜</a> |#}
+{#                            <a href="#">胡萝卜</a> |#}
+{#                            <a href="#">青菜</a> |#}
+{#                            <a href="#">西红柿</a> |#}
+{#                            <a href="#">花菜</a> |#}
+{#                            <a href="#">黄瓜</a> |#}
+{#                            <a href="#">大白菜</a> |#}
+{#                            <a href="#">大白菜</a> |#}
+{#                        </li>#}
+{#                    </ul>#}
+{##}
+{#                </div><!-- sideMenu End -->#}
+                <script type="text/javascript">
+                    jQuery(".sideMenu").slide({
+                        titCell:"h3", //鼠标触发对象
+                        targetCell:"ul", //与titCell一一对应，第n个titCell控制第n个targetCell的显示隐藏
+                        effect:"slideDown", //targetCell下拉效果
+                        trigger:"click",
+                        defaultIndex:1,
+                        triggerTime:150, //鼠标延迟触发时间（默认150）
+                        defaultPlay:true,//默认是否执行效果（默认true）
+                        returnDefault:false //鼠标从.sideMen移走后返回默认状态（默认false）
+                    });
+                </script>
+                <!--记录-->
+                <div class="Record">
+                    <div class="title_name">浏览记录</div>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <P><img src="/static/images/cp-7.jpg" /></P>
+                                <p>商品名称</p>
+                            </a>
+                            <p>价格:<b>￥5.30</b></p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <P><img src="/static/images/cp-7.jpg" /></P>
+                                <p>商品名称</p>
+                            </a>
+                            <p>价格:<b>￥5.30</b></p>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <P><img src="/static/images/cp-7.jpg" /></P>
+                                <p>商品名称</p>
+                            </a>
+                            <p>价格:<b>￥5.30</b></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right_style">
+                <div class="Operation">
+                    <span>
+                        <a href="#" class="on">默认</a>
+                        <a href="#">销量<em></em></a>
+                        <a href="#">价格<em></em></a>
+                        <a href="#">上架时间</a></span>
+                    <span class="img_lists"><em></em><a href="#">大图</a></span>
+                </div>
+                <div class="product_list">
+                    <ul class="product_name">
+                        {% for fruit in Fruits %}
+                            <li>
+                            <div class="p_item">
+                                <div class="Weight">{{ fruit.gweight }}/斤</div>
+                                <div class="img"><a href="#"><img src="/static/images/cp-4jpg.jpg" /></a></div>
+                                <div class="p_price">普通价：<b>￥{{ fruit.gprice }}</b> <span class="yuanjia">￥{{ fruit.gprice }}</span></div>
+                                <div class="p_name"><a href="#">{{ fruit.gdesc }}</a></div>
+                                <div class="p_operate"><a href="#">加入购物车</a> <span class="Number"><b>123</b>购买</span></div>
+                            </div>
+                        </li>
+                        {% endfor %}
+
+
+                    </ul>
+                </div>
+                <div class="Paging">
+                    <a href="#" class="pn-prev disabled"><i>&lt;</i>上一页</a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">下一页<i>&gt;</i></a>
+                    <a href="#">尾页</a>
+                    <span class="p-skip"><em>共<b>232</b>页&nbsp;&nbsp;到第</em><input id="page_jump_num" value="1" onkeydown="javascript:if(event.keyCode==13){page_jump();return false;}" class="input-txt"><em>页</em><a href="javascript:page_jump();" class="btn btn-default">确定</a></span>
+                </div>
+            </div>
+        </div>
+
+        <!--底部样式-->
+        <div class="slogen">
+            <p><img src="/static/images/fuwu_56.png" /></p>
+            <p><img src="/static/images/fuwu_57.png" /></p>
+            <p><img src="/static/images/fuwu_58.png" /></p>
+            <p><img src="/static/images/fuwu_59.png" /></p>
+        </div>
+        <div class="footer">
+            <div class="left_footer">
+                <div class="b_mc_y"><p class="tubiao"></p><p class="gy_name">品质保证 安全放心<br /><span>打造蔬菜水果专业购物平台</span></p></div>
+                <div class="b_mc_y"><p class="phone_img"></p><p class="phone"><b>028-44332-2232</b><br /><span>周一至周六 10:00-22:00</span></p></div>
+                <div class="b_mc_y"><p class="phone_sj_img"></p><p class="phone"><b>189083323211</b><br /><span>24小时客户服务热线</span></p></div>
+            </div>
+            <div class="right_footer">
+                <dl class="fore1">
+                    <dt><strong>购物指南</strong></dt>
+                    <dd>
+                        <div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+                    </dd>
+                </dl>
+                <dl class="fore1">
+                    <dt><strong>购物指南</strong></dt>
+                    <dd>
+                        <div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+                    </dd>
+                </dl>
+                <dl class="fore1">
+                    <dt><strong>购物指南</strong></dt>
+                    <dd>
+                        <div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+                    </dd>
+                </dl>
+                <dl class="fore1">
+                    <dt><strong>购物指南</strong></dt>
+                    <dd>
+                        <div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+                    </dd>
+                </dl>
+                <dl class="fore1">
+                    <dt><strong>购物指南</strong></dt>
+                    <dd>
+                        <div><a href="#" target="_blank" rel="nofollow">购物流程</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">会员介绍</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">团购/机票</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">常见问题</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">大家电</a></div>
+                        <div><a href="#" target="_blank" rel="nofollow">联系客服</a></div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 
 
 {#    {% block content5 %}#}
