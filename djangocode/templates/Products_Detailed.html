@@ -62,9 +62,13 @@
 	   </div>
 	   <div class="p_Submit">
 	     <div class="Numbers">
-		  <a href="javascript:void(0);" onclick="updatenum('del');">-</a>
+
+{#		  <a href="javascript:void(0);" onclick="updatenum('del');">-</a>#}
+             <button   goodid = "{{ good.id }}" class="subShopping">-</button>
 		  <input id="number" name="number" type="text" value="1" class="number_text">
-		  <a href="javascript:void(0);" onclick="updatenum('del');">+</a>
+             <button  goodid = "{{ good.id }}"  class="addShopping" >+</button>
+{#		  <a href="javascript:void(0);" onclick="updatenum('del');">+</a>#}
+
 		 </div>
 		 <div class="btn_Submit">
 		  <a href="{% url 'app:Shopping_Cart' %}" class="wrap_btn1" title="加入购物车"></a>
@@ -383,6 +387,7 @@ function imgs_load(img_id){//小图片加载设置
 }
 </script>
         <script src="/static/js/jquery.jqzoom.js" type="text/javascript"></script>
+    <script type="text/javascript" src="{% static 'js/market.js' %}"></script>
 
     {% endblock %}
 

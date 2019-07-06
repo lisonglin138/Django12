@@ -508,14 +508,17 @@ def Shopping_Cart(request):
     username = request.session.get('uname')
     print(username)
 
-    cars=CartInfo.objects.filter(user__uname=username)
+    carts=CartInfo.objects.filter(user__uname=username)
+    # 总价
+    # go
+    # total=
 
 
 
     return render(request,'Shopping_Cart.html',context={
         'title':'购物车',
         'username': username,
-        'cars':cars,
+        'carts':carts,
 
 
 
