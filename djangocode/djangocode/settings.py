@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'cart',
     'goods',
     'order',
-    'tinymce',
+    # 'tinymce',
 
 ]
 
@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middleware.middleware.loginMiddleware',
+
 ]
 
 ROOT_URLCONF = 'djangocode.urls'

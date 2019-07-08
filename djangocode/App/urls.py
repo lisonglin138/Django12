@@ -45,6 +45,10 @@ urlpatterns = [
     url(r'^Products_Detailed/(?P<gid>\d+)/$', views.Products_Detailed1, name="Products_Detailed1"),
 
     url(r'^Shopping_Cart/$', views.Shopping_Cart, name="Shopping_Cart"),
+    url(r'^Shopping_Cart_select/$', views.Shopping_Cart_select, name="Shopping_Cart_select"),
+
+
+
     url(r'^User_center/$', views.User_center, name="User_center"),
     url(r'^aa/$', views.aa, name="aa"),
 
@@ -57,8 +61,11 @@ urlpatterns = [
     url(r'^active/$',views.active,name='active'),
 
     # 富文本编辑器
-    url(r'^edit/$',views.edit,name='edit')
+    url(r'^edit/$',views.edit,name='edit'),
 
+
+    # 添加购物车数据
+    url(r'^addtocart/', views.add_to_cart, name='add_to_cart'),
 
 
 

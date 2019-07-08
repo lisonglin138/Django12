@@ -3,7 +3,7 @@ from datetime import datetime
 
 from django.core.cache import cache
 from django.core.mail import send_mail, send_mass_mail, EmailMultiAlternatives
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -374,35 +374,7 @@ def Products1(request ,id):
     xbks = hCategory.objects.filter(hparentid__gt='0').all()
     # print(xbks)
     hparentid = xbks.values('hparentid')
-    # if request.method == 'GET':
-    #     id = int(id)
-    #     # 主页
-    #     if id == 1:
-    #         return redirect(reverse('app:index'))
-    #     # 蔬菜
-    #     elif id == 2:
-    #         # return render(request,'Products.html')
-    #         return redirect(reverse('app:Products'))
-    #     # 水果
-    #     elif id == 3:
-    #         # return render(request,'Products.html')
-    #         return redirect(reverse('app:Products'))
-    #     # 特价水果
-    #     elif id == 4:
-    #         # return render(request,'Products.html')
-    #         return redirect(reverse('app:Products'))
-    #     # 粮油
-    #     elif id == 5:
-    #         # return render(request,'Products.html')
-    #         return redirect(reverse('app:Products'))
-    #     # 套餐礼盒
-    #     elif id == 6:
-    #         # return render(request,'Products.html')
-    #         return redirect(reverse('app:Products'))
-    #     # 限时团购
-    #     elif id == 7:
-    #         # return render(request,'Products.html')
-    #         return redirect(reverse('app:Products'))
+
 
     return render(request, 'Products.html', context={
         'title': '产品展示',
@@ -477,6 +449,8 @@ def Products_Detailed1(request ,gid):
     # 大于0的模块
     xbks = hCategory.objects.filter(hparentid__gt='0').all()
 
+
+    # 获取商品
     good=GoodsInfo.objects.filter(pk=gid).first()
     print(good.gprice)
 
@@ -493,6 +467,9 @@ def Products_Detailed1(request ,gid):
 
 
 
+
+
+
     return render(request, 'Products_Detailed.html', context={
         'title': '产品展示',
         'username': username,
@@ -504,26 +481,74 @@ def Products_Detailed1(request ,gid):
         'good':good
     })
 
-def Shopping_Cart(request):
-    username = request.session.get('uname')
+def add_to_cart(request):
+    # ajax请求
+    goodid = request.GET.get('goodid')
+    good=GoodsInfo.objects.filter(pk=goodid).first()
+    print(goodid)
+    username=request.session.get('uname')
+    user=UserInfo.objects.filter(uname=username).first()
+
     print(username)
+    carts=CartInfo.objects.filter(user__uname=username).filter(goods_id=goodid)
+    print(carts.exists())
+    if carts.exists():
+        cart_obj=carts.first()
+        print(cart_obj)
+        cart_obj.count=cart_obj.count + 1
+        cart_obj.save()
+        print(cart_obj.count)
+    else:
+
+        cart_obj=CartInfo.objects.create(user=user,goods=good,count=1,c_is_select=1)
+        print(cart_obj)
+        pass
+    data={
+
+            'status':200,
+            'msg':'add success',
+            'count':cart_obj.count
+        }
+    return JsonResponse(data= data )
+
+
+
+def Shopping_Cart(request):
+
+    username = request.session.get('uname')
+    # print(username)
 
     carts=CartInfo.objects.filter(user__uname=username)
     # 总价
     # go
     # total=
-
-
+    a = request.POST.get('xuanzhong')
+    print(a)
 
     return render(request,'Shopping_Cart.html',context={
         'title':'购物车',
         'username': username,
         'carts':carts,
 
-
-
-
     })
+def Shopping_Cart_select(request):
+    # 获取点击的id ,然后把相应的点击的    选中标志键 取反
+    cartid = request.GET.get('cartid')
+    print(cartid)
+    res = CartInfo.objects.filter(pk=cartid).first()
+    print(res.c_is_select)
+
+    if res.c_is_select:
+
+        res.c_is_select = 0
+
+        res.save()
+    else:
+
+        res.c_is_select = 1
+        res.save()
+
+    return None
 
 
 def User_center(request):
